@@ -4,7 +4,7 @@
     {{ .Site.Params.description }}
   {{ end }}
   {{ if isset .Site.Params "social" }}
-      <p>Find me on
+      <p>Contact Natasha by
       {{ $length := (len .Site.Params.social) }}
       {{ range $index, $elem := .Site.Params.social}}
       {{ if eq $elem.name "email" }}
@@ -34,7 +34,7 @@
 
   <section id="writing">
     <!-- TODO: use built in mainSections parameter https://gohugo.io/functions/where/#mainsections -->
-    <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Writings</a></span>
+    <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Recent updates</a></span>
     {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
     <span class="h2">Topics</span>
     <span class="widget tagcloud">
@@ -84,7 +84,8 @@
   {{ $showProjectsList := false }}
   {{ if .Site.Data.projects }}
     {{ $showProjectsList = true }}
-  {{ else if (isset .Site.Params "showProjectsList") }}
+  {{ end }}
+  {{ if (isset .Site.Params "showProjectsList") }}
     {{ $showProjectsList = .Site.Params.ShowProjectsList }}
   {{ end }}
   {{ if $showProjectsList }}

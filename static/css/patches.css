@@ -1,0 +1,12 @@
+body {
+    background-color: #FFFEFE;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    "Helvetica Neue", sans-serif;
+  }
+
+#header #nav ul a {
+	margin-right: 15px;
+    color: #cc2a41;
+    font-weight: bold;
+}
