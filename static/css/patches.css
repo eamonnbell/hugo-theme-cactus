@@ -6,9 +6,14 @@ body {
   }
 
 #header #nav ul a {
-	margin-right: 15px;
+	  margin-right: 15px;
     color: #cc2a41;
     font-weight: bold;
+    font-size: 125%;
+}
+
+#header #nav ul li.active a {
+    text-decoration: underline;
 }
 
 #header #logo {

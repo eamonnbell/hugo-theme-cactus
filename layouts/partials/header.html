@@ -18,8 +18,11 @@
       <li class="icon">
         <a href="#"><i class="fas fa-bars fa-2x"></i></a>
       </li>
+      {{ $current := . }}
       {{ range .Site.Menus.main }} 
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+        {{ $active = or $active (eq .Name $current.Title) }}
+        <li class="{{ if $active }}active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
       {{ end }}
     </ul>
   </div>
